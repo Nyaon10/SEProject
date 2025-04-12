@@ -23,11 +23,11 @@ return new class extends Migration
             $table->string('Resi');
             $table->string('Status_Pengiriman')->default('Pending');
             $table->date('Tanggal_Kirim');
-            $table->date('Tanggal_Terima');
+            $table->date('Tanggal_Terima')->nullable();
             $table->date('Tanggal_Pengembalian');
             $table->string('Status_Pengembalian')->default('Pending');
-            $table->date('Tanggal_Dikembalikan');
-            $table->integer('Jumlah_Hari_Overdue');
+            $table->date('Tanggal_Dikembalikan')->nullable();
+            $table->integer('Jumlah_Hari_Overdue')->nullable();
         });
     }
 

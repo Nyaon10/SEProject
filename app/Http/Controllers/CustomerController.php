@@ -15,10 +15,13 @@ class CustomerController extends Controller
             'NIK_Pelanggan' => 'required|numeric',
             'Alamat_Pelanggan' => 'required|string',
             'Email_Pelanggan' => 'required|email|unique:pelanggan,Email_Pelanggan',
-            'Password_Pelanggan' => 'required|string|min:6',
+            'Password_Pelanggan' => 'required|string|min:6|confirmed',
+            'Password_Pelanggan_confirmation' => 'required|string|min:6',
             'No_Hp_Pelanggan' => ['required', 'regex:/^\+\d{7,15}$/'],
+            'Akun_Instagram' => 'required|string|unique:pelanggan,Akun_Instagram',
         ], [
             'No_Hp_Pelanggan.regex' => 'The phone number must start with + followed by the country code and digits.',
+            'Password_Pelanggan.confirmed' => 'The password confirmation does not match.',
         ]);
 
         // Generate unique ID_Pelanggan
@@ -50,9 +53,7 @@ class CustomerController extends Controller
             'Status_Pelanggan' => 'Aktif',
         ]);
 
-        return response()->json([
-            'message' => 'Customer created successfully',
-            'data' => $customer
-        ], 201);
+        return redirect('/login')->with('success', 'Registration successful! You can now log in.');
+
     }
 }

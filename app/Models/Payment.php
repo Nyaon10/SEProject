@@ -32,7 +32,6 @@ class Payment extends Model
         'Jumlah_Bayaran_Terima' => 'decimal:2',
         'Total_Tagihan' => 'decimal:2',
         'Bukti_Pembayaran' => 'array',
-        'Tipe_Transasksi' => 'boolean'
     ];
 
     public function setTanggalPembayaranAttribute($value)

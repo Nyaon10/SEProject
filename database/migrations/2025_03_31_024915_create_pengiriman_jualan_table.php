@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('Resi');
             $table->string('Status_Pengiriman')->default('Pending');
             $table->date('Tanggal_Kirim');
-            $table->date('Tanggal_Terima');
+            $table->date('Tanggal_Terima')->nullable();
         });
     }
 

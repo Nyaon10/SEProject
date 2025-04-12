@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->string('ID_Pelanggan')->primary();
-            $table->integer('NIK_Pelanggan')->index();
+            $table->bigInteger('NIK_Pelanggan')->unique();
             $table->string('Nama_Pelanggan');
             $table->text('Alamat_Pelanggan');
-            $table->string('Email_Pelanggan');
+            $table->string('Email_Pelanggan')->unique();
             $table->string('Password_Pelanggan');
             $table->string('No_Hp_Pelanggan');
-            $table->string('Akun_Instagram');
+            $table->string('Akun_Instagram')->unique();
             $table->boolean('Blacklist_Status')->default(false);
             $table->string('Status_Pelanggan');
         });

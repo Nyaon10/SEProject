@@ -14,6 +14,7 @@ class Customer extends Model
     protected $primaryKey = 'ID_Pelanggan';
     public $incrementing = false;
     protected $keyType = 'string';
+    public $timestamps = false; 
 
     protected $fillable = [
         'ID_Pelanggan',        

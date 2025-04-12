@@ -45,4 +45,10 @@ class Order extends Model
     {
         return $this->belongsTo(Customer::class, 'ID_Pelanggan', 'ID_Pelanggan');
     }
+
+    public function orderDetails()
+{
+    return $this->hasMany(OrderDetail::class, 'ID_Pesanan', 'ID_Pesanan');
+}
+
 }
